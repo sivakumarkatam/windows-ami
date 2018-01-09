@@ -10,10 +10,10 @@
     "builders": [
         {
             "type": "amazon-ebs",
-            "region": "eu-west-1",
+            "region": "ap-southeast-1",
             "instance_type": "t2.micro",
             "source_ami": "{{user `base_ami`}}",
-            "ami_name": "servicedemo-W2012R2-{{timestamp}}",
+            "ami_name": "packer-servicedemo-W2012R2-{{timestamp}}",
             "user_data_file": "{{template_dir}}/bootstrap-aws.txt",
             "communicator": "winrm",
             "winrm_timeout": "4h",
@@ -23,10 +23,11 @@
             "security_group_id": "{{user `security_group_id`}}",
             "access_key": "{{user `aws_access_key`}}",
             "secret_key": "{{user `aws_secret_key`}}",
-            "tags": {
-                "version": "2012r2",
-                "builder": "packer"
-            }
+             "tags": {
+                 "Name": "windows-AMI",
+                 "Application": "DevOps"
+                }
+            
         }
     ],
     "provisioners": [
