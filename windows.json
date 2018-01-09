@@ -34,7 +34,7 @@
         {
             "type": "powershell",
             "scripts": [
-                "{{template_dir}}/scritp.ps1"
+                "{{template_dir}}/script.ps1"
             ]
         }
     ]
